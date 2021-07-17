@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Container from "./Components/Container";
-import Obstructions from "./Components/Obstructions";
 import searchFlowPath from "./Functions/bfs";
+import GridWrapper from "./GridWrapper";
 
 export default function WaterflowSimulator(props) {
     const gridProps = props.gridProps;
@@ -48,15 +47,13 @@ export default function WaterflowSimulator(props) {
     return (
         <div className="waterflow-simulator">
             <div>Drag the obstructions and place it inside the grid</div>
-            <div className="grid-wrapper">
-                <div className="container-wrapper">
-                    <Container gridProps={gridProps} handleObstructionDrop={handleObstructionDrop} SetSelectedBlock={SetSelectedBlock} selectedBlock={selectedBlock}
-                                placedObstructionsCount={placedObstructionsCount} obstructionsBlocksArray={obstructionsBlocksArray} waterflowPath={waterflowPath}/>
-                </div>
-                <div className="obstructions-wrapper">
-                    <Obstructions gridProps={gridProps} placedObstructionsCount={placedObstructionsCount}/>
-                </div>
-            </div>
+            <GridWrapper gridProps={gridProps} selectedBlock={selectedBlock}
+                waterflowPath={waterflowPath}
+                placedObstructionsCount={placedObstructionsCount}
+                obstructionsBlocksArray={obstructionsBlocksArray}
+                handleObstructionDrop={handleObstructionDrop}
+                SetSelectedBlock={SetSelectedBlock}
+            />
             <div className="buttons">
                 <button onClick={goBack}> Back </button>
                 <button onClick={resetGrid}> Reset </button>
