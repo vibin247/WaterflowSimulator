@@ -10,10 +10,14 @@
 }
 
 input[type="range"] {
-    display: block;
-    margin: 20px 0px;
+    display: inline-block;
+    margin: 10px 25px 10px;
     width: 25%;
     cursor: pointer;
+    vertical-align: middle;
+}
+.slider{
+  margin: 20px 0px;
 }
 
 .container-wrapper{

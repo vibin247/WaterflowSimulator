@@ -26,7 +26,7 @@ export default function Actions(props) {
         <div className="buttons">
             <button onClick={goBack}> Back </button>
             <button onClick={resetGrid}> Reset </button>
-            <button onClick={startSimulation}> Start Simulation </button>
+            <button onClick={startSimulation}> Run Simulation </button>
         </div>
     );
 }

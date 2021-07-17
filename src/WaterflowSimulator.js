@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Actions from "./Components/Actions";
+import Actions from "./Actions";
 import searchFlowPath from "./Functions/bfs";
 import GridWrapper from "./GridWrapper";
 

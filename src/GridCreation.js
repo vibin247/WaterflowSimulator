@@ -3,11 +3,11 @@ import Slider from "./Components/Slider";
 
 export default function GridCreation(props) {
 
-    const [rows, SetRows] = useState(1);
-    const [cols, SetCols] = useState(1);
+    const [rows, SetRows] = useState(5);
+    const [cols, SetCols] = useState(5);
     const [obstructions, SetObstructions] = useState(1);
     const defaultProps = {
-        min: 2, max: 10
+        min: 2, max: 20
     }
     const rowProps = {
         id:"rows",
@@ -18,7 +18,7 @@ export default function GridCreation(props) {
         ...defaultProps
     };
     const colProps = {
-        id:"cols",
+        id:"columns",
         onChange: (e) => {
             SetCols(e.target.value);
         },
@@ -31,7 +31,7 @@ export default function GridCreation(props) {
             SetObstructions(e.target.value);
         },
         value:obstructions,
-        ...defaultProps
+        min: 1, max: 10
     };
 
     const onSubmitAction = (e) => {
@@ -59,11 +59,8 @@ export default function GridCreation(props) {
         <div className="grid-creation">
             <h3>Grid Creation</h3>
             <form onSubmit={onSubmitAction}>
-                <div>Number of rows</div>
                 <Slider sliderProps={rowProps}/>
-                <div>Number of columns</div>
                 <Slider sliderProps={colProps}/>
-                <div>Number of obstructions</div>
                 <Slider sliderProps={obstructionsProps}/>
                 <input type="submit" value="Next"/>
             </form>
