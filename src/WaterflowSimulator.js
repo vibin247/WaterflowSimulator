@@ -33,8 +33,8 @@ export default function WaterflowSimulator(props) {
             <Actions
                 SetObstructionsBlocksArray={SetObstructionsBlocksArray} SetGridCreated={props.SetGridCreated}
                 SetWaterflowPath={SetWaterflowPath} SetSelectedBlock={SetSelectedBlock}                
-                SetPlacedObstructionsCount={SetPlacedObstructionsCount}                
-                startSimulation={startSimulation} cols={gridProps.cols}
+                SetPlacedObstructionsCount={SetPlacedObstructionsCount} obstructions={gridProps.obstructions}            
+                startSimulation={startSimulation} cols={gridProps.cols} placedObstructionsCount={placedObstructionsCount}
                 selectedBlock={selectedBlock} obstructionsBlocksArray={obstructionsBlocksArray}
             />
         </div>

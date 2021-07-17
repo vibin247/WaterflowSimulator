@@ -14,7 +14,9 @@ export default function Actions(props) {
     const checkIfEntryBlocked = () => props.obstructionsBlocksArray.some(element=> element[0]===0 && element[1]===props.selectedBlock); 
 
     const startSimulation = () => {
-        if(props.selectedBlock >= 0 && props.selectedBlock < props.cols && !checkIfEntryBlocked())
+        if(props.placedObstructionsCount < props.obstructions)
+            alert("Use all the obstruction(s) or go back and reduce the number of obstruction(s)");
+        else if(props.selectedBlock >= 0 && props.selectedBlock < props.cols && !checkIfEntryBlocked())
             props.startSimulation();
         else if(checkIfEntryBlocked())
             alert("This entry point is obstructed. Try a different point");
