@@ -55,7 +55,6 @@ function searchFlowPath(rows, cols, blockArray, entry){
     blockArray.forEach(element => {
       obstructionsArray[element[0]][element[1]] =  true;
     });
-    console.log(obstructionsArray);
     BFSSearchMethod(visited, obstructionsArray, entry[0], entry[1], result);
     return result;
 }
